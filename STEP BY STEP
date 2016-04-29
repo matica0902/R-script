@@ -21,7 +21,13 @@ team = gl(5, 5,labels = paste("Team", LETTERS[1:5])), player = sample(letters, 2
 #R STRING FUNITON
 
 #R APPLY GROUP
-CAN USE INTO ROW OR INTO COLUMN 
+CAN USE BOTH INTO ROW OR INTO COLUMN 
+data01=sample(1:10)
+data02=sample(1:10)
+data03=sample(1:10)
+data04=data.frame(data01,data02,data03)
+
+apply(data04,1,mean)
 #TO ROW
 apply(df,1,mean())
 #TO COLUMN
