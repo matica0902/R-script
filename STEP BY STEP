@@ -16,6 +16,26 @@
 
 #R APPLY GROUP
 
+#SAPPLY
+Function	Description
+sapply(vector,function(aa) ax)
+sapply(data,f)===>f must be defined first
+
+#sapply Type 1
+kk= sapply(inp2, function(x) 2*x)
+#sapply Type2
+f <- function(x) x^2
+sapply(1:10, f)
+
+#BY
+Function	Description
+by("DATAFRAME","which column want group by","function(kk)" abc(target_column),data=kk)
+
+
+
+
+
+
 #R funciton
 Function	Description
 substr(x, start=n1, stop=n2)	Extract or replace substrings in a character vector.
