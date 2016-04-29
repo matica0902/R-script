@@ -10,6 +10,10 @@
 
 #R READ TABLE
 
+#R FAST DATA METHOD
+
+runif(25, .200, .400)
+
 #R REAPTE
 
 #R STRING FUNITON
@@ -30,6 +34,19 @@ sapply(1:10, f)
 #BY
 Function	Description
 by("DATAFRAME","which column want group by","function(kk)" abc(target_column),data=kk)
+
+#BY EX1
+los=by(loo,loo$GOPPSTART, function(df) glm(GRESULT~GOBP+GOPS,family=binomial,data=df))
+
+#BY EX2
+data1=c("a","b","c","a","a","b","c","b","a","c")
+data01=sample(1:10)
+data02=sapply(data01,function(x) x*5)
+data03=data.frame(data01,data02,data1)
+by(data03,data03$data1, function(df) mean(data03$data01,data=df))
+
+
+
 
 
 
