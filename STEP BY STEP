@@ -11,8 +11,10 @@
 #R READ TABLE
 
 #R FAST DATA METHOD
-
-runif(25, .200, .400)
+patient = 1:100
+da=runif(25, .200, .400)
+age = rnorm(100, mean = 60, sd = 12)
+team = gl(5, 5,labels = paste("Team", LETTERS[1:5])), player = sample(letters, 25))
 
 #R REAPTE
 
@@ -20,16 +22,29 @@ runif(25, .200, .400)
 
 #R APPLY GROUP
 
+#TAPPLY
+JUST APPLY IN "VECTOR" NOT IN DATAFRAME
+IS THE DIFFERENT FROM "BY" 
+
+
+
 #SAPPLY
+1.SAPPLY CAN APPLY IN EACH ELEMENT TO A VECTOR 
+2.SAPPLY CAN APPLY IN EACH "COLUMN"->Y DIRECTION TO A DATAFRAME 
+
 Function	Description
 sapply(vector,function(aa) ax)
 sapply(data,f)===>f must be defined first
 
-#sapply Type 1
+#sapply Type 1 in vector
 kk= sapply(inp2, function(x) 2*x)
-#sapply Type2
+#sapply Type2 in vector
 f <- function(x) x^2
 sapply(1:10, f)
+
+#sapply Type3 in dataframe
+
+sapply(df,mean)
 
 #BY
 Function	Description
