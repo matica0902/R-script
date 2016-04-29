@@ -73,7 +73,7 @@ data03=data.frame(data01,data02,data1)
 
 by(data03,data03$data1, function(df) mean(df[,1]))
 
-by("DATAFRAME","target column group by which column","function(kk)" abc(target_column),data=kk)
+by("DATAFRAME","target column group by which column","function(kk)" fun(target_column),data=kk)
 by(data03,data03$data1, function(data03) mean(data03$data01))
                         ##error function(df) 
 
