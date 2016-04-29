@@ -33,7 +33,7 @@ IS THE DIFFERENT FROM "BY"
 2.SAPPLY CAN APPLY IN EACH "COLUMN"->Y DIRECTION TO A DATAFRAME 
 
 Function	Description
-sapply(vector,function(aa) ax)
+sapply(vector,function(aa) fx)===>fx can direct define here
 sapply(data,f)===>f must be defined first
 
 #sapply Type 1 in vector
@@ -58,13 +58,12 @@ data1=c("a","b","c","a","a","b","c","b","a","c")
 data01=sample(1:10)
 data02=sapply(data01,function(x) x*5)
 data03=data.frame(data01,data02,data1)
-by(data03,data03$data1, function(df) mean(data03$data01,data=df))
 
+by(data03,data03$data1, function(df) mean(df[,1]))
 
-
-
-
-
+by("DATAFRAME","target column group by which column","function(kk)" abc(target_column),data=kk)
+by(data03,data03$data1, function(data03) mean(data03$data01))
+                        ##error function(df) 
 
 
 
