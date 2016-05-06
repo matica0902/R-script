@@ -1,10 +1,52 @@
 #R DATASET
+1.list all dataset you have install
+data()
+
+2.famous dataset
+data(isis)
+data(titanic)
+data(Adult)
+data(woman)
 
 #R LIBRARY
 
 #R data type
+1.list 
+set a null list 
+aa=list() 
+
+2.matrix
+aa=matrix()
+
+3.dataframe 
+aa=data.frame
 
 #R LOOP control
+1.FOR LOOP
+p=list()
+for(x in 1:5){a=x^2;print(a);p[x]=a}
+
+2.REP
+CAN USE WITH "NO INDEX CHANGE" FUNCTION
+
+
+IF USE WITH CHANGE INDEX THEN  MUST ALSO USE FOR LOOP 
+
+3.REP WTIH WHICH SINGLE VECTOR ====>tapply
+
+4.REP WTIH WHICH SINGLE VECTOR or COLUMN ===>sapply
+
+f <- function(x) x^2
+sapply(1:10, f)
+
+5.REP WTIH WHICH SINGLE COLUMN ====>apply
+
+6.REP WTIH WHICH SINGLE COLUMN AND GRUOP BY IT WITH FACTOR LEVEL====>by
+
+
+
+
+
 
 #R READ FILE
 
@@ -59,6 +101,7 @@ sapply(data,f)===>f must be defined first
 
 #sapply Type 1 in vector
 kk= sapply(inp2, function(x) 2*x)
+
 #sapply Type2 in vector
 f <- function(x) x^2
 sapply(1:10, f)
