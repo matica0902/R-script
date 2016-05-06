@@ -19,7 +19,7 @@ aa=list()
 aa=matrix()
 
 3.dataframe 
-aa=data.frame
+aa=data.frame()
 
 #R LOOP control
 1.FOR LOOP
@@ -27,17 +27,18 @@ p=list()
 for(x in 1:5){a=x^2;print(a);p[x]=a}
 
 2.REP
-CAN USE WITH "NO INDEX CHANGE" FUNCTION
+USUALLY USE WITH "NO INDEX CHANGE" FUNCTION
 
 
-IF USE WITH CHANGE INDEX THEN  MUST ALSO USE FOR LOOP 
+IF NEED USE WITH CHANGE INDEX THEN  MUST ALSO USE WITH "FOR" LOOP 
 
 3.REP WTIH WHICH SINGLE VECTOR ====>tapply
 
 4.REP WTIH WHICH SINGLE VECTOR or COLUMN ===>sapply
-
+#WITH VECTOR
 f <- function(x) x^2
 sapply(1:10, f)
+#WITH DATAFRAME
 
 5.REP WTIH WHICH SINGLE COLUMN ====>apply
 
@@ -67,7 +68,6 @@ x<- data.frame(id=rep(LETTERS, each=4)[1:100], replicate(100, sample(1001, 100))
 
 x <- read.table("http://pastebin.com/raw.php?i=m1ZJuKLH")
 
-#R REAPTE
 
 #R STRING FUNITON
 
@@ -100,6 +100,7 @@ sapply(vector,function(aa) fx)===>fx can direct define here
 sapply(data,f)===>f must be defined first
 
 #sapply Type 1 in vector
+inp2=c(1:10)
 kk= sapply(inp2, function(x) 2*x)
 
 #sapply Type2 in vector
@@ -114,7 +115,7 @@ sapply(df,mean)
 Function	Description
 by("DATAFRAME","which column want group by","function(kk)" abc(target_column),data=kk)
 
-#BY EX1
+#BY EX1---->
 los=by(loo,loo$GOPPSTART, function(df) glm(GRESULT~GOBP+GOPS,family=binomial,data=df))
 
 #BY EX2---->
