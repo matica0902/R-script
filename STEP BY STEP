@@ -136,6 +136,13 @@ by(mm01,mm01$xyz, function(mm01) apriori(tl,parameter=list(minlen=2,support=0.1,
 by(data03,data03$data1, function(data03) mean(data03$data01))
                         ##error function(df) 
 
+lapply is a list apply which acts on a list or vector and returns a list.
+sapply is a simple lapply (function defaults to returning a vector or matrix when possible)
+vapply is a verified apply (allows the return object type to be prespecified)
+rapply is a recursive apply for nested lists, i.e. lists within lists
+tapply is a tagged apply where the tags identify the subsets
+apply is generic: applies a function to a matrix's rows or columns
+
 
 
 #R funciton
