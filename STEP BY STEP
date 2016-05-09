@@ -71,6 +71,8 @@ x <- read.table("http://pastebin.com/raw.php?i=m1ZJuKLH")
 
 
 
+
+
 #R APPLY GROUP
 CAN USE BOTH INTO ROW OR INTO COLUMN 
 data01=sample(1:10)
@@ -258,6 +260,25 @@ m01
 #R CONNECT DATABSE
 
 #R MACHINE LEARNING 
+#APRIORI
+data <- list(
+c("a","b","c"),
+c("a","b"),
+c("a","b","d"),
+c("b","e"),
+c("b","c","e"),
+c("a","d","e"),
+c("a","c"),
+c("a","b","d"),
+c("c","e"),
+c("a","b","d","e")
+)
+data <- as(data, "transactions")
+
+#minrule 
+#inspect( subset( ru02, subset = lhs %pin% "V2=a") )------------------> causion "P"IN
+#inspect( subset( ru02, subset = lhs %ain% c("V2=a","V3=b")) )--------> causion "A"IN
+
 
 #R MODELING
 
