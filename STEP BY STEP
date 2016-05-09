@@ -69,7 +69,7 @@ x<- data.frame(id=rep(LETTERS, each=4)[1:100], replicate(100, sample(1001, 100))
 x <- read.table("http://pastebin.com/raw.php?i=m1ZJuKLH")
 
 
-#R STRING FUNITON
+
 
 #R APPLY GROUP
 CAN USE BOTH INTO ROW OR INTO COLUMN 
@@ -137,6 +137,7 @@ by(data03,data03$data1, function(data03) mean(data03$data01))
 
 
 #R funciton
+#R STRING FUNITON
 Function	Description
 substr(x, start=n1, stop=n2)	Extract or replace substrings in a character vector.
 x <- "abcdef" 
