@@ -208,7 +208,10 @@ runif(n, min=0, max=1)	uniform distribution, follows the same pattern
 as the normal distribution above. 
 #10 uniform random variates
 x <- runif(10)
-
+#statics skill in factor df 
+library(plyr)
+cdata <- ddply(mm02, c("V1"), summarise,N=length(V1))
+cdata[,2]
 
 #merge
 YOU CAN USE　"MERGE" INSTEAD OF SQL JOIN 
