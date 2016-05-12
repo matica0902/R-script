@@ -286,6 +286,9 @@ data <- as(data, "transactions")
 #inspect( subset( ru02, subset = lhs %pin% "V2=a") )------------------> causion "P"IN
 #inspect( subset( ru02, subset = lhs %ain% c("V2=a","V3=b")) )--------> causion "A"IN
 
+#inspect in S3
+(data[[1]][1:3][,1]) show object first property and first three elements and first coloumn
+
 
 #R MODELING
 
