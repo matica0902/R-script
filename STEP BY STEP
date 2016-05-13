@@ -45,7 +45,11 @@ sapply(1:10, f)
 6.REP WTIH WHICH SINGLE COLUMN AND GRUOP BY IT WITH FACTOR LEVEL====>by
 
 
-
+#While loop control
+1.x<-1
+while (x<10){do something}  ##caution if you dont set break condition it will go into "infinit cycle"
+2.x<-1      
+while (x<10){if (x == 3) break;do something}  ## IT is right to "add break" rule 
 
 
 
