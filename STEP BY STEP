@@ -341,6 +341,12 @@ R> data(Groceries)
 R> rules <- apriori(Groceries, parameter=list(support=0.005, confidence=0.5))
 R> plot(rules)
 
+> plot(subrules2, method="graph") 
+> plot(subrules2, method="graph",control=list(type="items")) 
+
+
+
+
 #minrule 
 #inspect( subset( ru02, subset = lhs %pin% "V2=a") )------------------> causion "P"IN
 #inspect( subset( ru02, subset = lhs %ain% c("V2=a","V3=b")) )--------> causion "A"IN
