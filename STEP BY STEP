@@ -72,8 +72,24 @@ x<- data.frame(id=rep(LETTERS, each=4)[1:100], replicate(100, sample(1001, 100))
 
 x <- read.table("http://pastebin.com/raw.php?i=m1ZJuKLH")
 
+#Change Column name
+names(pr25)[1]<-paste("Titlename")
 
+# sort by which colcumn
+newdata <- mtcars[order(mtcars$mpg),] 
 
+# sort by two column mpg and cyl
+newdata <- mtcars[order(mtcars$mpg, mtcars$cyl),]
+
+#sort by mpg (ascending) and cyl (descending)
+newdata <- mtcars[order(mtcars$mpg, -mtcars$cyl),] 
+
+#Choose which vlaue
+Filter with fix column 
+seled= exyear[c(exyear$YEARS=="2014",exyear$TTNAM=="ARI"),]
+
+Filter with which value
+seled= exyear[exyear$YEARS=="2014"&exyear$TTNAM=="ARI",]   
 
 #delete  one column name of IP  df <- subset(df, select = -c(a,c) )
 bro01<-subset(bro01,select=-IP)
