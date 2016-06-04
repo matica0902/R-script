@@ -85,20 +85,31 @@ newdata <- mtcars[order(mtcars$mpg, mtcars$cyl),]
 newdata <- mtcars[order(mtcars$mpg, -mtcars$cyl),] 
 
 #Choose which vlaue
-Filter with fix column 
+Filter with Two fix column 
 seled= exyear[c(exyear$YEARS=="2014",exyear$TTNAM=="ARI"),]
+seled= d[d$TSECTION=="EAST",2:3]
 
 Filter with which value
 seled= exyear[exyear$YEARS=="2014"&exyear$TTNAM=="ARI",]   
+
+
+#Choose double Value use {OR} with One fix column
+fake.trunk <- fake[fake$nm == "a" | fake$nm == "b", ]
+
+fake[ fake$nm %in% c("a","b"), ]
 
 #delete  one column name of IP  df <- subset(df, select = -c(a,c) )
 bro01<-subset(bro01,select=-IP)
 
 #choose fix value Cart in the column name of Event
 
+newdata <- subset(mydata, sex=="m" & age > 25,
+select=weight:income)
+
 bro01<-subset(bro01, Event =="Cart")
-
-
+#FAQ  can you find the error below
+seled03<- subset(pr25,Tiltename=="LOVEL優雅高腳白酒杯300ml")
+answer ==>Tiltename  is not Titlename
 #R APPLY GROUP
 CAN USE BOTH INTO ROW OR INTO COLUMN 
 data01=sample(1:10)
@@ -326,8 +337,10 @@ data <- as(data, "transactions")
 #minrule 
 #inspect( subset( ru02, subset = lhs %pin% "V2=a") )------------------> causion "P"IN
 #inspect( subset( ru02, subset = lhs %ain% c("V2=a","V3=b")) )--------> causion "A"IN
+#partchoose
+seled04<-subset(pr25,Titlename %in% c("LOVEL優雅高腳白酒杯300ml","膳魔師彈蓋式不鏽鋼真空保溫杯350ml(黑色)"))
 
-#inspect in S3
+##inspect in S3
 (data[[1]][1:3][,1]) show object first property and first three elements and first coloumn
 
 
