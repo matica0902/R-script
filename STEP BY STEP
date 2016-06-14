@@ -151,8 +151,8 @@ sapply(1:10, f)
 sapply(df,mean)
 
 #BY
-Function	Description
-by("DATAFRAME","which column want group by","function(kk)" abc(target_column),data=kk)
+Function	Description 
+by("DATAFRAME","which column want group by","function(kk)" abc(target_column),data=kk) ==>GREAT~~
 
 #BY EX1---->
 los=by(loo,loo$GOPPSTART, function(df) glm(GRESULT~GOBP+GOPS,family=binomial,data=df))
