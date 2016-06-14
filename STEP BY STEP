@@ -110,6 +110,13 @@ bro01<-subset(bro01, Event =="Cart")
 #FAQ  can you find the error below
 seled03<- subset(pr25,Tiltename=="LOVEL優雅高腳白酒杯300ml")
 answer ==>Tiltename  is not Titlename
+
+
+#choose list items with subset [often use]
+s01<-c("LOVEL優雅高腳白酒杯300ml","膳魔師彈蓋式不鏽鋼真空保溫杯350ml(黑色)")
+seled05<-subset(pr25,Titlename %in% s01)
+
+
 #R APPLY GROUP
 CAN USE BOTH INTO ROW OR INTO COLUMN 
 data01=sample(1:10)
