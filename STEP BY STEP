@@ -92,6 +92,9 @@ seled= d[d$TSECTION=="EAST",2:3]
 Filter with which value
 seled= exyear[exyear$YEARS=="2014"&exyear$TTNAM=="ARI",]   
 
+#It is easier in coding that use subset than dataframe in choose "field"
+EX:seled= d[d$TSECTION=="EAST",]    coding with dataframe
+EX:seled=subset(d,TSECTION=="EAST") coding wiht subset
 
 #Choose double Value use {OR} with One fix column
 fake.trunk <- fake[fake$nm == "a" | fake$nm == "b", ]
