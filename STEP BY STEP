@@ -371,7 +371,7 @@ seled04<-subset(pr25,Titlename %in% c("LOVEL優雅高腳白酒杯300ml","膳魔�
 problem define ->data analyze->model chioce->modeling->implenment
 
 #R connection to sqlserver & oracle & impala compare use JDBC
-## impala jdbc
+##[Impala] jdbc  with R
 currentPath<-getwd()
 
 library(rJava)
@@ -382,8 +382,16 @@ library(RJDBC)
 drv <- JDBC("com.cloudera.impala.jdbc4.Driver",impalajdbc,identifier.quote="'")
 conn <- dbConnect(drv, "jdbc:impala://192.168.37.128:21050")
 
-##  oracle jdbc
-
+##[Oracle] jdbc with R
+#STEP1 prepare oracle db
+0.install a database on linux OS
+1.setup a connection of databasse
+2.setup a account of this connection
+3.test the connection on sqldevelop
+4.make sure in the same intranet if you dont use the fix ip
+5.download OracleDriver-ojdbc14.jar from oracle website
+6.check databse ip use command ifconfig
+#STEP2 connect with RJDBC in R
 library(RJDBC)
 
 drv=JDBC("oracle.jdbc.driver.OracleDriver","C:/mylib/ojdbc14.jar",identifier.quote="'")
@@ -392,7 +400,7 @@ con=dbConnect(drv,"jdbc:oracle:thin:@localhost:1521:XE","user1","u111")
 
 dbListTables(con)
 
-## sqlserver jdbc
+## [Sqlserver] jdbc  with R
 if (.Platform$OS.type == "unix"){
 drv <- JDBC("com.microsoft.sqlserver.jdbc.SQLServerDriver","/etc/sqljdbc_2.0/sqljdbc4.jar")
 } else {
