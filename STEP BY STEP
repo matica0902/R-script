@@ -368,8 +368,10 @@ seled04<-subset(pr25,Titlename %in% c("LOVEL優雅高腳白酒杯300ml","膳魔�
 
 
 #R MODELING
-#R connection to sqlserver & oracle & impala compare use JDBC
+problem define ->data analyze->model chioce->modeling->implenment
 
+#R connection to sqlserver & oracle & impala compare use JDBC
+## impala jdbc
 currentPath<-getwd()
 
 library(rJava)
@@ -390,7 +392,7 @@ con=dbConnect(drv,"jdbc:oracle:thin:@localhost:1521:XE","user1","u111")
 
 dbListTables(con)
 
-
+## sqlserver jdbc
 if (.Platform$OS.type == "unix"){
 drv <- JDBC("com.microsoft.sqlserver.jdbc.SQLServerDriver","/etc/sqljdbc_2.0/sqljdbc4.jar")
 } else {
@@ -408,9 +410,9 @@ drv <- JDBC("com.microsoft.sqlserver.jdbc.SQLServerDriver","C:/Program Files/Mic
 
 #conn <- dbConnect(drv, "jdbc:impala://192.168.37.128:21050")            ## TO impala
 #con=dbConnect(drv,"jdbc:oracle:thin:@localhost:1521:XE","user1","u111") ## TO oracle
-conn <- dbConnect(drv, "jdbc:sqlserver://serverName", "userID", "password")## sqlserver
+#conn <- dbConnect(drv, "jdbc:sqlserver://serverName", "userID", "password")## sqlserver
 #conn <- dbConnect(drv, "jdbc:sqlserver://xxx.xx.xxx.xx:1433;database=My_MARKET_DATA", "admin", "123456789")
-#dbListTables(conn)
+
          
 #R RHADOOP
 
