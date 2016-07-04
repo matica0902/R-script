@@ -412,14 +412,13 @@ drv <- JDBC("com.microsoft.sqlserver.jdbc.SQLServerDriver","C:/Program Files/Mic
 drv <- JDBC("com.cloudera.impala.jdbc4.Driver",impalajdbc,identifier.quote="'")
 drv=JDBC("oracle.jdbc.driver.OracleDriver","C:/mylib/ojdbc14.jar",identifier.quote="'")
 drv <- JDBC("com.microsoft.sqlserver.jdbc.SQLServerDriver","/etc/sqljdbc_2.0/sqljdbc4.jar")
-drv <- JDBC("com.microsoft.sqlserver.jdbc.SQLServerDriver","C:/Program Files/Microsoft SQL Server JDBC Driver 3.0/sqljdbc_3.0
-         /enu/sqljdbc4.jar")
+drv <- JDBC("com.microsoft.sqlserver.jdbc.SQLServerDriver","C:/rdata/sqljdbc4.jar")
 
 
 #conn <- dbConnect(drv, "jdbc:impala://192.168.37.128:21050")            ## TO impala
 #con=dbConnect(drv,"jdbc:oracle:thin:@localhost:1521:XE","user1","u111") ## TO oracle
 #conn <- dbConnect(drv, "jdbc:sqlserver://serverName", "userID", "password")## sqlserver
-#conn <- dbConnect(drv, "jdbc:sqlserver://xxx.xx.xxx.xx:1433;database=My_MARKET_DATA", "admin", "123456789")
+#conn <- dbConnect(drv, "jdbc:sqlserver://10.0.1.31:1433;database=test", "sa", "123456")
 
          
 #R RHADOOP
