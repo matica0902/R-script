@@ -418,7 +418,8 @@ drv <- JDBC("com.microsoft.sqlserver.jdbc.SQLServerDriver","C:/rdata/sqljdbc4.ja
 #conn <- dbConnect(drv, "jdbc:impala://192.168.37.128:21050")            ## TO impala
 #con=dbConnect(drv,"jdbc:oracle:thin:@localhost:1521:XE","user1","u111") ## TO oracle
 #conn <- dbConnect(drv, "jdbc:sqlserver://serverName", "userID", "password")## sqlserver
-#conn <- dbConnect(drv, "jdbc:sqlserver://10.0.1.31:1433;database=test", "sa", "123456")
+#conn <- dbConnect(drv, "jdbc:sqlserver://10.0.1.31:1434;database=test", "sa", "123456") 
+#Tip port now is set 1434 not 14"33"  must check carefully~~
 
          
 #R RHADOOP
