@@ -421,7 +421,88 @@ drv <- JDBC("com.microsoft.sqlserver.jdbc.SQLServerDriver","C:/rdata/sqljdbc4.ja
 #conn <- dbConnect(drv, "jdbc:sqlserver://10.0.1.31:1434;database=test", "sa", "123456") 
 #Tip port now is set 1434 not 14"33"  must check carefully~~
 
-         
+#R tidLists-class {arules}
+
+Methods
+coerce
+signature(from = "tidLists", to = "ngCMatrix"); access the sparse matrix representation. In the ngCMatrix each column represents the transaction IDs for one item/itemset.
+coerce
+signature(from = "tidLists", to = "list")
+coerce
+signature(from = "list", to = "tidLists")
+coerce
+signature(from = "tidLists", to = "matrix")
+coerce
+signature(from = "tidLists", to = "itemMatrix")
+coerce
+signature(from = "tidLists", to = "transactions")
+coerce
+signature(from = "itemMatrix", to = "tidLists"); this also coerces from transactions.
+coerce
+signature(from = "transactions", to = "tidLists")
+c
+signature(x = "tidLists"); combine.
+dim
+signature(x = "tidLists"); returns the dimensions of the sparse Matrix representing the tidLists.
+dimnames, rownames, colnames
+signature(x = "transactions"); returns row (items/itemsets) and column (transactionIDs if available) names.
+labels
+signature(x = "transactions"); returns the labels for the itemsets in each transaction (see itemMatrix).
+inspect
+inspect the transaction ID lists.
+itemInfo
+returns the slot itemInfo.
+itemLabels
+signature(object = "tidLists"); returns the item labels as a character vector.
+labels
+signature(x = "transactions"); returns the labels (transaction IDs).
+show
+signature(object = "tidLists")
+summary
+signature(object = "tidLists")
+transactionInfo
+signature(x = "transactions"): returns the slot transactionInfo.
+See Also
+
+[-methods, LIST, eclat, image, length, size, ngCMatrix(in Matrix), itemMatrix-class, itemsets-class, transactions-class
+
+Examples
+
+## Create transaction data set.
+data <- list(
+  c("a","b","c"),
+  c("a","b"),
+  c("a","b","d"),
+  c("b","e"),
+  c("b","c","e"),
+  c("a","d","e"),
+  c("a","c"),
+  c("a","b","d"),
+  c("c","e"),
+  c("a","b","d","e")
+  )
+data <- as(data, "transactions")
+data
+ 
+## convert transactions to transaction ID lists
+tl <- as(data, "tidLists")
+tl 
+ 
+inspect(tl)
+dim(tl)
+dimnames(tl)
+ 
+## inspect visually
+image(tl)
+ 
+## mine itemsets with transaction ID lists
+f <- eclat(data, parameter = list(support = 0, tidLists = TRUE))
+tl2 <- tidLists(f)
+inspect(tl2)
+
+
+
+
 #R RHADOOP
 
 #R IMPALA
