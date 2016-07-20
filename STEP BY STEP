@@ -11,14 +11,26 @@ data(woman)
 #R LIBRARY
 
 #R data type
-1.list 
+1.[list] 
 set a null list 
 aa=list() 
+#Fast use 3 different type vectors combine into one list 
+> n = c(2, 3, 5)                                  #num of vector
+> s = c("aa", "bb", "cc", "dd", "ee")             #cha of vector
+> b = c(TRUE, FALSE, TRUE, FALSE, FALSE)          #log of vector
+> x = list(n, s, b, 3)                            # x contains copies of n, s, b
+# BUG that n is num so tha cant use substring function so must tansrform as character type 
+# So must add transfrom code below 
+# lb01[[1]]<-as.character(lb01[[1]])
+# then it will work kk<-lapply(lb01,function(x) strsplit(x,","))
+index of List  x
+1. > x[[2]]==>"aa", "bb", "cc", "dd", "ee"
+2. > x[[2]][3]==> "cc"
 
-2.matrix
+2.[matrix]
 aa=matrix()
 
-3.dataframe 
+3.[dataframe] 
 aa=data.frame()
 
 #R LOOP control
@@ -220,6 +232,11 @@ sub("\\s",".","Hello There") returns "Hello.There"
 strsplit(x, split)	Split the elements of character vector x at split. 
 strsplit("abc", "") returns 3 element vector "a","b","c"
 
+#you can choose any one [] element of subsplit
+[review] df<-strsplit(as.character(df$xyz),'=>') beccome a list of word 
+[Usage] df<-sapply(strsplit(df,"simble"), "[", index)
+[Usage] df<-sapply(strsplit(df,"=>"), "[", 1) ****But if there is no simble be seperated that it also be package one list[]
+EX-->  a09<-sapply(strsplit(aa07,"1="), "[", 2) 
 
 #toupper
 toupper(x)	Uppercase
@@ -501,7 +518,38 @@ tl2 <- tidLists(f)
 inspect(tl2)
 
 
+#############WHAT THE　DIFFERENT FROM LIST FREEDOM BETWEEN JAVA AND R
+# IN JAVA 
+List a01=new list();
+IF the data is a01=(1,(2,3),4) then you can cut it into (1,2,3,4) very easy  
+it typical use readline() and cut by ","
 
+#IN R use dataframe & use List 
+a.use dataframe
+IF the data is a01=(1,(2,3),4) 
+first step you must subset to (1,4)  and (2,3)
+second step you must emsemble (2)(3) to be dataframe then emsemble again with (1,4) then become datarame (1,2,3,4)
+
+## WHY different ?
+the problem is dataframe is equal length but list isnt and neednt 
+solution 1. make some NA value into Dataframe it is easy 
+solution 2. make double pair in column like ((2,3),4) become (2,4)(3,4) 
+            this method maybe must add index in each recorder like (index1,(2,3),4))and then have two step
+            1.(index1,(2,3))==> seperate to (index1,2)&(index1,3)
+            2.emsemble (index1,2)&(index1,3)&(index1,4) use merge by "index 1"
+            solution 3. maybe it not good above so ..............
+            
+b.use list in R ?
+Maye it is "more powerful" in R when use lapply function
+[Usage]  kk= lapply(List,which index ,function(x))
+# compute the list mean for each list element
+EX: lapply(x, mean)
+
+EX: lapply(1:6, function(i, x, y) x[[i]] + y[[i]],
+       x = list1, y = list2)
+       
+EX: lapply(mat1.df, function(x, y) sum(x) + y, y = 5) 
+kk<-lapply(lb01,function(x) strsplit(x,","))
 
 #R RHADOOP
 
