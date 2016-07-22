@@ -1,3 +1,16 @@
+#First Statement
+It is really different from that R and JAVA in script
+the most signifite show at below
+a.Call element from list
+  JAVA in O.O. Form  ==>  a=list.get(i);for (i=1 ,5)
+  R in math form     ==>  a=list[1:5,];
+
+b.Order a list
+  JAVA in O.O Form ==>  mtcars.sort()                    object.method()
+  R in math Form   ==>  mtcars[order(mtcars$mpg),]       object[method(),]
+  
+
+
 #R DATASET
 1.list all dataset you have install
 data()
