@@ -1,0 +1,32 @@
+#Skill
+make a variable all with zero value then you can get all associate rule in use inspect(rule)
+EX: 
+data=
+V1,V2,V3,V4,V5,V6,V7,V8
+1001,a,1,A,10,Long,circle,c1
+1002,a,2,F,11,Short,rec,c2
+1003,a,3,F,12,Short,trigle,c3
+1004,a,3,G,13,Short,circle,c4
+1005,a,3,H,14,Long,rec,c5
+1006,b,4,J,15,Short,rec,c6
+1007,b,4,K,11,Short,trigle,c7
+1008,b,5,A,12,Long,circle,c8
+1009,b,5,A,12,Short,trigle,c9
+1010,b,6,A,15,Short,rec,c10
+1011,c,6,A,14,Long,rec,c11
+1012,a,1,H,15,Short,rec,c12
+1013,a,1,H,16,Long,circle,c13
+1014,a,2,H,15,Short,trigle,c14
+1015,c,2,K,17,Long,circle,c15
+1016,d,3,G,19,Short,trigle,c16
+1017,d,3,J,18,Long,trigle,c17
+1018,c,4,G,15,Short,rec,c18
+1019,a,3,H,14,Long,rec,c5
+1020,a,3,H,14,Long,rec,c5
+1021,a,3,H,14,Long,rec,c5
+1022,a,3,H,14,Long,rec,c5
+
+then you can creat V9="rule"
+then the code you can write 
+ru02=apriori(tl,parameter=list(support=0.001,confidence=0.05),appearance=list(rhs=c("V9=rule"),default="lhs"))
+But maybe the lib have already have the default value that if you dont write rhs=c("V9=rule") maybe have the same result!!
