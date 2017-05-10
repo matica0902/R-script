@@ -1,0 +1,7 @@
+#Arule
+It is often happen that if you statement below
+step 1
+fl=as.factor(fl) that will let df dispear to be a factor
+step 2
+library(arules)
+data<- as(cart01, "transactions")  will occur error expection
