@@ -30,3 +30,45 @@ then you can creat V9="rule"
 then the code you can write 
 ru02=apriori(tl,parameter=list(support=0.001,confidence=0.05),appearance=list(rhs=c("V9=rule"),default="lhs"))
 But maybe the lib have already have the default value that if you dont write rhs=c("V9=rule") maybe have the same result!!
+
+##Code example01 find all (A,B,...,X) patten
+
+Sys.setlocale(locale = "US")
+cart01<-read.csv("D:rdata/cbi/sym01.csv",header=FALSE,sep=",",encoding = "UTF-8")
+Sys.setlocale(locale = "CHT")
+
+#cart01<-read.csv("c:/Rdata/wuz/wuz_cart1cate01.csv",header=FALSE,sep=",")
+str(cart01)
+#cart01<-unique(cart01)
+##for(i in 1:50){rep(transform(pro01,i=as.factor(pro01[,i])))}
+cart01=subset(cart01,select=c(V2,V3,V4,V5,V6,V7))
+##  maybe more simple then subset cartr<-cartr[c(3,4,5,6)]
+    # fldf<-transform(fl,V1=as.factor(fl$V1))
+cart01<-transform(cart01,V1=as.factor(cart01$V2))
+cart01<-transform(cart01,V2=as.factor(cart01$V3))
+cart01<-transform(cart01,V3=as.factor(cart01$V4))
+cart01<-transform(cart01,V4=as.factor(cart01$V5))
+cart01<-transform(cart01,V5=as.factor(cart01$V6))
+cart01<-transform(cart01,V6=as.factor(cart01$V7))
+#Select rule variables again !! 
+#********************************************
+cart01=subset(cart01,select=c(V1,V3,V5))
+#********************************************
+str(cart01)
+
+##cartr6<-cartr[,1:6]
+##  FUCK it is if cartr$V3 is dataframe  cartr<-cbind(cartr$V3,cartr$V4,cartr$V5,cartr$V6)
+##  So must arrange it below
+
+##cartr<-cartr[c(3,4,5,6)]
+
+
+library(arules)
+data<- as(cart01, "transactions")
+#VERY GOOD
+inspect(data[1:10,])
+tl <- as(data, "tidLists")
+                 
+                                                            
+ru02=apriori(tl,parameter=list(support=0.001,confidence=0.05),appearance=list(rhs=c("V5=Long"),default="lhs"))
+inspect(ru02)
