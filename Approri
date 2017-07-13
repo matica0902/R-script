@@ -1,3 +1,14 @@
+####VERY IMPRESSIVE CAUTION!!!!!!!!!!!!
+#同一筆交易 不能出現兩次一模一樣的物品 
+例如  A B C A D 就會出現錯誤訊息Error in asMethod(object) : 
+  can not coerce list with transactions with duplicated items
+把重複的物品拿掉 就會 PASS 方法為使用下列函數!!!去除重複值~~  
+  
+read.transactions has an rm.duplicates argument to remove those duplicates.
+
+read.transactions("Trans", format = "basket", sep=",", rm.duplicates=TRUE)
+
+
 #Skill
 make a variable all with zero value then you can get all associate rule in use inspect(rule)
 EX: 
