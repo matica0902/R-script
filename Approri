@@ -72,3 +72,32 @@ tl <- as(data, "tidLists")
                                                             
 ru02=apriori(tl,parameter=list(support=0.001,confidence=0.05),appearance=list(rhs=c("V5=Long"),default="lhs"))
 inspect(ru02)
+
+
+#We can transfer DF to a list by two steps:
+1.Step one  use  as.data.frame(t(df))
+afterdf <- as.data.frame(t(df))
+
+2.Step two tranfer to a list  by column direction
+cc=as.list(tdf[1:4,]) 
+
+##Review List Extract  by index  EX: list (c(1,2,3),c(2,3),c(4)) are three data of one list you can all index(2,2) by list[[2]][2]
+data <- list(
+  c("a","b","c","ok"),
+  c("a","b"),
+  c("a","b","d"),
+  c("b","e","ok"),
+  c("b","c","e"),
+  c("a","d","e","ok"),
+  c("a","c"),
+  c("a","b","d"),
+  c("c","e","ok"),
+  c("a","b","d","e")
+)
+
+We can call by index 
+list[[3]][2]=b
+list[[4]][3]=ok
+list[[6]][4]=ok
+list[3]=c("a","b","d")
+
