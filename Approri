@@ -5,8 +5,11 @@
 把重複的物品拿掉 就會 PASS 方法為使用下列函數!!!去除重複值~~  
   
 read.transactions has an rm.duplicates argument to remove those duplicates.
-
-read.transactions("Trans", format = "basket", sep=",", rm.duplicates=TRUE)
+data <-  data[!duplicated(data),] ==>if you want the same recorder.
+或
+read.transactions("Trans", format = "basket", sep=",", rm.duplicates=TRUE) ==>if your set have been a transaction
+或
+df3_recoded <- unique(df3_recoded) ==>if your set is a dataframe 
 
 
 #Skill
